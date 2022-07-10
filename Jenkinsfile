@@ -19,7 +19,7 @@ pipeline {
     stage('Start container') {
       steps {
         sh './gradlew clean build'
-        sh 'docker-compose build'
+        sh 'COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build'
         sh 'docker-compose up -d --no-color --wait'
         sh 'docker-compose ps'
       }
