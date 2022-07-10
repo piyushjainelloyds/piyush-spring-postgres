@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Run tests against the container') {
       steps {
-        sh 'curl http://api_service:8083/api/v1/product'
+        sh 'curl http://localhost:8083/api/v1/product'
       }
     }
   }
