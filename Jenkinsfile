@@ -26,13 +26,13 @@ pipeline {
     }
     stage('Run tests against the container') {
       steps {
-        sh 'curl http://localhost:8083/api/v1/product'
+        sh 'curl http://localhost:8080/api/v1/product'
       }
     }
   }
   post {
     always {
-
+      sh 'docker-compose down --remove-orphans -v'
       sh 'docker-compose ps'
     }
   }
