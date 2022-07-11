@@ -22,7 +22,7 @@ pipeline {
         sh 'COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build'
         sh 'docker-compose up -d --no-color --wait'
         sh 'docker-compose ps'
-        sh 'curl http://api_service:8083/api/v1/product'
+        sh 'curl http://localhost:8083/api/v1/product'
       }
     }
     stage('Run tests against the container') {
@@ -33,7 +33,6 @@ pipeline {
   }
   post {
     always {
-      sh 'docker-compose down --remove-orphans -v'
       sh 'docker-compose ps'
     }
   }
