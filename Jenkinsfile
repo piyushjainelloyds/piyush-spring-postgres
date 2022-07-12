@@ -16,7 +16,6 @@ pipeline {
     }
     stage('Start container') {
       steps {
-        sh 'COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build'
         sh 'docker-compose up -d --no-color --wait'
         sh 'docker-compose ps'
         sh 'curl http://localhost:8083/api/v1/product'
