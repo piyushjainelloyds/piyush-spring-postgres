@@ -8,8 +8,6 @@ services:
     command: gradle test -i
     depends_on:
       - postgres_db
-    volumes:
-      - ./test:/test
   postgres_db:
     image: "postgres:13.1"
     restart: always
