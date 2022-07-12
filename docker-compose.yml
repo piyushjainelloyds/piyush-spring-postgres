@@ -2,9 +2,6 @@ version: "3.7"
 services:
   api_service:
     image: gradle:7.2-jdk11
-    restart: always
-    ports:
-      - 8083:8080
     command: gradle test -i
     depends_on:
       - postgres_db

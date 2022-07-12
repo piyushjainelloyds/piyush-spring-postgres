@@ -18,7 +18,6 @@ pipeline {
       steps {
         sh 'docker-compose up -d --no-color --wait'
         sh 'docker-compose ps'
-        sh 'curl http://localhost:8083/api/v1/product'
       }
     }
     stage('Run tests against the container') {
