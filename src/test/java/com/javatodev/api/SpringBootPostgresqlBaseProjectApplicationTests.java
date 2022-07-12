@@ -4,6 +4,7 @@ package com.javatodev.api;
 import com.javatodev.api.controller.ProductController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,6 +17,7 @@ class SpringBootPostgresqlBaseProjectApplicationTests {
 
     @Test
     public void contextLoads() throws Exception {
+        SpringApplication.run(SpringBootPostgresqlBaseProjectApplication.class);
         assertThat(controller).isNotNull();
     }
 
