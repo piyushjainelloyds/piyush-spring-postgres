@@ -17,8 +17,8 @@ class SpringBootPostgresqlBaseProjectApplicationTests {
 
     @Test
     public void contextLoads() throws Exception {
-        SpringApplication.run(SpringBootPostgresqlBaseProjectApplication.class);
         assertThat(controller).isNotNull();
+
     }
 
 }
